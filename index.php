@@ -10,6 +10,8 @@ error_reporting(E_ALL);
 
 
 
+require 'config.php';
+
 // Load your classes
 require_once 'Core/database.php';
 
@@ -20,6 +22,13 @@ require 'Model/Article.php';
 require 'Controller/HomepageController.php';
 require 'Controller/ArticleController.php';
 
+//print Function for easy printing
+function printR($data)
+{
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+}
 
 $database = new Database($config['host'], $config['user'], $config['password'], $config['dbname']);
 $database->connect();
@@ -31,7 +40,8 @@ switch ($action) {
         (new ArticleController($database))->index();
         break;
     case 'articles-show':
-        // TODO: detail page
+        (new ArticleController($database))->showArticle();
+        break;
     case 'home':
     default:
         (new HomepageController())->index();
