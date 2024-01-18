@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 class HomepageController
 {
+
+
     public function index()
     {
         // Usually, any required data is prepared here

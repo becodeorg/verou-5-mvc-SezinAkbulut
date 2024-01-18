@@ -21,3 +21,18 @@ class Article
         // TODO: return the date in the required format
     }
 }
+
+/*
+ *<?php
+class Idea
+{
+    public int $id;
+    public string $title;
+
+    public function __construct(int $id, string $title)
+    {
+        $this->id = $id;
+        $this->title = $title;
+    }
+}
+ */
