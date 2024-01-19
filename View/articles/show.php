@@ -5,6 +5,7 @@
 
     <section>
         <?php if ($article !== null): ?>
+            <img src="<?= $article->photo ?>" alt="Article Image">
             <h1><?= $article->title ?></h1>
             <p><?= $article->formatPublishDate() ?></p>
             <p><?= $article->description ?></p>

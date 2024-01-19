@@ -23,14 +23,14 @@ require 'Controller/HomepageController.php';
 require 'Controller/ArticleController.php';
 
 //print Function for easy printing
-/*
+
 function printR($data)
 {
     echo "<pre>";
     print_r($data);
     echo "</pre>";
 }
-*/
+
 
 $database = new Database($config['host'], $config['user'], $config['password'], $config['dbname']);
 $database->connect();

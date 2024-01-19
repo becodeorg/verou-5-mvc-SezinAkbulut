@@ -16,7 +16,7 @@ class ArticleController
     public function index()
     {
         // Print articles for debugging
-       // printR($this->articles);
+        printR($this->articles);
 
         $this->articles = $this->getArticles();
 
@@ -38,7 +38,7 @@ class ArticleController
             $rawArticles = $statement->fetchAll();
 
             foreach ($rawArticles as $rawArticle) {
-                $articles[] = new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
+                $articles[] = new Article($rawArticle['id'], $rawArticle['photo'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
             }
 
         } catch (PDOException $e) {
@@ -80,7 +80,7 @@ class ArticleController
         }
 
         // Pass the article ID as the first argument to the Article constructor
-        return new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
+        return new Article($rawArticle['id'], $rawArticle['photo'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
     }
 
     private function getPrevArticleId($currentArticleId)
