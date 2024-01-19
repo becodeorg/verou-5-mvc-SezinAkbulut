@@ -1,19 +1,19 @@
 <?php require 'View/includes/header.php'?>
 
-<?php // Use any data loaded in the controller here ?>
+<?php ?>
 
     <section>
-        <h1><?= $article->title ?></h1>
-        <p><?= $article->formatPublishDate() ?></p>
-        <p><?= $article->description ?></p>
+        <h1><?= $this->article->title ?></h1>
+        <p><?= $this->article->formatPublishDate() ?></p>
+        <p><?= $this->article->description ?></p>
 
         <!-- links to next and previous -->
-        <?php if ($prevArticleId !== null):  ?>
-            <a href="index.php?page=articles-show&id=<?= $prevArticleId ?>">Previous article</a>
+        <?php if ($this->prevArticleId !== null): ?>
+            <a href="index.php?action=articles-index-show&id=<?= $this->prevArticleId ?>">Previous article</a>
         <?php endif; ?>
 
-        <?php if ($nextArticleId !== null):  ?>
-            <a href="index.php?page=articles-show&id=<?= $nextArticleId ?>">Next article</a>
+        <?php if ($this->nextArticleId !== null): ?>
+            <a href="index.php?action=articles-index-show&id=<?= $this->nextArticleId ?>">Next article</a>
         <?php endif; ?>
     </section>
 

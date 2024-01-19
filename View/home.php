@@ -3,7 +3,7 @@
 <?php // Use any data loaded in the controller here ?>
 
     <section>
-        <p><a href="index.php?page=articles">To articles page</a></p>
+        <p><a href="index.php?action=articles-index-show">To articles page</a></p>
 
         <p>Put your content here.</p>
     </section>
