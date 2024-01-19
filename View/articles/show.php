@@ -7,9 +7,14 @@
         <p><?= $article->formatPublishDate() ?></p>
         <p><?= $article->description ?></p>
 
-        <?php // TODO: links to next and previous ?>
-        <a href="index.php?page=articles-show&id=<?= $article->id - 1 ?>">Previous article</a>
-        <a href="index.php?page=articles-show&id=<?= $article->id + 1 ?>">Next article</a>
+        <!-- links to next and previous -->
+        <?php if ($prevArticleId !== null):  ?>
+            <a href="index.php?page=articles-show&id=<?= $prevArticleId ?>">Previous article</a>
+        <?php endif; ?>
+
+        <?php if ($nextArticleId !== null):  ?>
+            <a href="index.php?page=articles-show&id=<?= $nextArticleId ?>">Next article</a>
+        <?php endif; ?>
     </section>
 
 <?php require 'View/includes/footer.php'?>

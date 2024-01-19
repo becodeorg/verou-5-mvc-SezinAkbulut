@@ -40,7 +40,8 @@ switch ($action) {
         (new ArticleController($database))->index();
         break;
     case 'articles-show':
-        (new ArticleController($database))->showArticle();
+        $articleId = $_GET['id'] ?? null;
+        (new ArticleController($database))->show($articleId);
         break;
     case 'home':
     default:
