@@ -17,7 +17,6 @@ class Article
         $this->publishDate = $publishDate;
     }
 
-
     public function formatPublishDate($format = 'd-m-Y')
     {
         if ($this->publishDate !== null) {

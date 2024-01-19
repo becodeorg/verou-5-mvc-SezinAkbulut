@@ -1,6 +1,5 @@
 <?php
 
-
 declare(strict_types=1);
 
 class ArticleController
@@ -17,10 +16,11 @@ class ArticleController
     public function index()
     {
         // Print articles for debugging
-        printR($this->articles);
+       // printR($this->articles);
 
         $this->articles = $this->getArticles();
 
+        //Change the page name
         $pageTitle = "Articles";
         // Load the view
         require 'View/articles/index.php';
@@ -54,6 +54,7 @@ class ArticleController
         $prevArticleId = $this->getPrevArticleId($articleId);
         $nextArticleId = $this->getNextArticleId($articleId);
 
+        //Change the page name
         $pageTitle = "Show Articles";
 
         require 'View/articles/show.php';
@@ -62,7 +63,7 @@ class ArticleController
     private function getArticleById($articleId)
     {
         if ($articleId === null || !is_numeric($articleId)) {
-            echo "Invalid article ID";
+           // echo "Invalid article ID";
             return null;
         }
 
@@ -80,7 +81,6 @@ class ArticleController
 
         // Pass the article ID as the first argument to the Article constructor
         return new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
-
     }
 
     private function getPrevArticleId($currentArticleId)
@@ -104,8 +104,5 @@ class ArticleController
 
         return $nextArticleId;
     }
-
-
-
 }
 

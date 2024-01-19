@@ -9,10 +9,10 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 
-
+//Database secret info's
 require 'config.php';
 
-// Load your classes
+// Load class
 require_once 'Core/database.php';
 
 // Include all your model files here
@@ -23,12 +23,14 @@ require 'Controller/HomepageController.php';
 require 'Controller/ArticleController.php';
 
 //print Function for easy printing
+/*
 function printR($data)
 {
     echo "<pre>";
     print_r($data);
     echo "</pre>";
 }
+*/
 
 $database = new Database($config['host'], $config['user'], $config['password'], $config['dbname']);
 $database->connect();
