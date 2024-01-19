@@ -1,5 +1,7 @@
 # verou-5-mvc-SezinAkbulut
 
+# Model, view, controller (also: even more acronyms 🤔)
+
 ## The mission
 
 MVC is one of the typical acronyms in programming.
