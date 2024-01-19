@@ -16,7 +16,7 @@ class ArticleController
     public function index()
     {
         // Print articles for debugging
-        printR($this->articles);
+       // printR($this->articles);
 
         $this->articles = $this->getArticles();
 

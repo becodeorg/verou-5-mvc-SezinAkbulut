@@ -9,7 +9,7 @@
             <h1><?= $article->title ?></h1>
             <p><?= $article->formatPublishDate() ?></p>
             <p><?= $article->description ?></p>
-            <p><?= $article->author ?></p>
+            <p>By <?= $article->author ?></p>
 
             <!-- links to next and previous -->
             <?php if ($prevArticleId !== null): ?>

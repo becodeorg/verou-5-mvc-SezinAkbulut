@@ -12,12 +12,14 @@
 </head>
 <body>
     <header>
-        <ul>
-            <li>
-                <a href="index.php">Home</a>
-            </li>
-            <li>
-                <a href="index.php?action=articles-index">Articles</a>
-            </li>
-        </ul>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="index.php?action=articles-index">Articles</a>
+                </li>
+            </ul>
+        </nav>
     </header>
