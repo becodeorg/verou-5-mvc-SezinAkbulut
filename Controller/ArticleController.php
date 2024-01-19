@@ -104,5 +104,6 @@ class ArticleController
 
         return $nextArticleId;
     }
+
 }
 

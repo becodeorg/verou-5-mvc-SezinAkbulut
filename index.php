@@ -36,6 +36,7 @@ function printR($data)
 $database = new Database($config['host'], $config['user'], $config['password'], $config['dbname']);
 $database->connect();
 
+
 $action = $_GET['action'] ?? null;
 
 switch ($action) {
