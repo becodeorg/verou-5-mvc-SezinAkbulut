@@ -1,6 +1,5 @@
 <?php
 
-
 declare(strict_types=1);
 
 class Article
@@ -10,13 +9,14 @@ class Article
     public ?string $description;
     public ?string $publishDate;
 
-    public function __construct(int $id, string $title, ?string $description, ?string $publishDate)
+    public function __construct(?int $id, string $title, ?string $description, ?string $publishDate)
     {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->publishDate = $publishDate;
     }
+
 
     public function formatPublishDate($format = 'd-m-Y')
     {

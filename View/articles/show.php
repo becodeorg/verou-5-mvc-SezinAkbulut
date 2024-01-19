@@ -1,19 +1,24 @@
 <?php require 'View/includes/header.php'?>
 
-<?php ?>
+<?php
+;?>
 
     <section>
-        <h1><?= $this->article->title ?></h1>
-        <p><?= $this->article->formatPublishDate() ?></p>
-        <p><?= $this->article->description ?></p>
+        <?php if ($article !== null): ?>
+            <h1><?= $article->title ?></h1>
+            <p><?= $article->formatPublishDate() ?></p>
+            <p><?= $article->description ?></p>
 
-        <!-- links to next and previous -->
-        <?php if ($this->prevArticleId !== null): ?>
-            <a href="index.php?action=articles-index-show&id=<?= $this->prevArticleId ?>">Previous article</a>
-        <?php endif; ?>
+            <!-- links to next and previous -->
+            <?php if ($prevArticleId !== null): ?>
+                <a href="index.php?action=articles-show&id=<?= $prevArticleId ?>">Previous article</a>
+            <?php endif; ?>
 
-        <?php if ($this->nextArticleId !== null): ?>
-            <a href="index.php?action=articles-index-show&id=<?= $this->nextArticleId ?>">Next article</a>
+            <?php if ($nextArticleId !== null): ?>
+                <a href="index.php?action=articles-show&id=<?= $nextArticleId ?>">Next article</a>
+            <?php endif; ?>
+        <?php else: ?>
+            <p>Article not found</p>
         <?php endif; ?>
     </section>
 

@@ -62,17 +62,25 @@ class ArticleController
     private function getArticleById($articleId)
     {
         if ($articleId === null || !is_numeric($articleId)) {
-
             echo "Invalid article ID";
             return null;
         }
+
         $statement = $this->database->connection->prepare('SELECT * FROM articles WHERE id = :id');
         $statement->bindParam(':id', $articleId);
         $statement->execute();
 
         $rawArticle = $statement->fetch(PDO::FETCH_ASSOC);
 
-        return new Article($rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
+        // Check if the article was found
+        if (!$rawArticle) {
+            echo "Article not found";
+            return null;
+        }
+
+        // Pass the article ID as the first argument to the Article constructor
+        return new Article($rawArticle['id'], $rawArticle['title'], $rawArticle['description'], $rawArticle['publish_date']);
+
     }
 
     private function getPrevArticleId($currentArticleId)
